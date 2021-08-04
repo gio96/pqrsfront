@@ -1,24 +1,15 @@
-.content{
-  padding-top: 5rem;
-  /*height: 20rem;
-  width: 20rem;*/
-  height: 100%;
-  width: 100%;
-  background-color: blue;
-}
-
-.formulario{
-  background-color: black;
-  height: 20rem;
-  width: 20rem;;
-}
-
-.otro{
-  background-color: blue;
-  padding-top: 10rem;
-}
 
 .row-height {
   height: 100%;
   width: 100%;
+}
+
+.motivoSolicitud{
+  padding: 1rem;
+}
+
+
+.titulo{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }

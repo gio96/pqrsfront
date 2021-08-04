@@ -1,5 +1,7 @@
-import { SolicitudModel } from './solicitudModel';
+
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SolicitudModel } from '../models/solicitudModel';
 
 @Component({
   selector: 'app-crear-solicitud',
@@ -12,21 +14,23 @@ export class CrearSolicitudComponent {
   typeRequest = ['PETICION','QUEJA'];
 
   myHero =  new SolicitudModel('SkyDog',
-                       'PETICION');
-
-  model = new SolicitudModel("La peticion es porque", this.typeRequest[0]);
-
-  submitted = false;
-
-
-  newSolicitud(){
-    this.model = new SolicitudModel("La peticion es porque", this.typeRequest[1]);
-  }
+                       'PETICION');  
 
 
   onSubmit(){
-    this.submitted = true;
+    console.warn(this.form.value)
   }
 
+
+  form: FormGroup;
+  typeRequestControl = new FormControl('',Validators.required);
+  requestDescriptionControl = new FormControl('',Validators.required)
+
+  constructor(){
+    this.form = new FormGroup({
+      typeR: this.typeRequestControl,
+      requestDescription: this.requestDescriptionControl
+    })
+  }
 
 }

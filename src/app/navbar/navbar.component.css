@@ -1,14 +1,14 @@
 .fondoBlanco{
-  background-color: white;
+  background-color: #FFFFFF;
 }
 
 .app-header {
   z-index:1000;
-  background-color: rgb(144, 155, 170);
+  background-color:#FFFFFF;
   position:fixed;
 }
 
 .colorletra{
-  color: #da0948;
+  color: #000000;
   font-family: 'Poppins', sans-serif;
 }

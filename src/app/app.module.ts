@@ -21,6 +21,9 @@ import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { SolicitudComponent } from './solicitud/solicitud.component';
 import { CrearSolicitudComponent } from './crear-solicitud/crear-solicitud.component';
+import {MatSelectModule} from '@angular/material/select';
+import {FormControl, FormGroup} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,9 @@ import { CrearSolicitudComponent } from './crear-solicitud/crear-solicitud.compo
     MatDividerModule,
     MatMenuModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
