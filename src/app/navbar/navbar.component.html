@@ -1,0 +1,18 @@
+<mat-toolbar fxLayout="row" class="app-header" >
+  <span class="colorletra" fxFlex>Pqrs</span>
+  <mat-nav-list class="colorletra" *ngFor="let item of menuItems" fxHide.xs>
+    <a class="colorletra" mat-list-item [routerLink]="item.url" routerLinkActive="active">{{item.label}}</a>
+  </mat-nav-list>
+
+  <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+      <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #dropMenu="matMenu">
+      <ng-container *ngFor="let item of menuItems">
+          <button mat-menu-item>
+            <a class="colorletra" mat-list-item [routerLink]="item.url" routerLinkActive="active">{{item.label}}</a>
+          </button>
+          <mat-divider></mat-divider>
+      </ng-container>
+  </mat-menu>
+</mat-toolbar>
