@@ -24,13 +24,16 @@ import { CrearSolicitudComponent } from './crear-solicitud/crear-solicitud.compo
 import {MatSelectModule} from '@angular/material/select';
 import {FormControl, FormGroup} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+import { DetallesSolicitudComponent } from './detalles-solicitud/detalles-solicitud.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SolicitudComponent,
-    CrearSolicitudComponent
+    CrearSolicitudComponent,
+    DetallesSolicitudComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatListModule,
     MatExpansionModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

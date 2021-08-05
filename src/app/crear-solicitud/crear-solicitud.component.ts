@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SolicitudModel } from '../models/solicitudModel';
+import { SolicitudCreateModel } from '../models/solicitudModel';
 
 @Component({
   selector: 'app-crear-solicitud',
@@ -13,7 +13,7 @@ export class CrearSolicitudComponent {
 
   typeRequest = ['PETICION','QUEJA'];
 
-  myHero =  new SolicitudModel('SkyDog',
+  myHero =  new SolicitudCreateModel('SkyDog',
                        'PETICION');  
 
 
