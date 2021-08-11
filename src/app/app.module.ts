@@ -26,6 +26,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { DetallesSolicitudComponent } from './detalles-solicitud/detalles-solicitud.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DetallesSolicitudComponent } from './detalles-solicitud/detalles-solici
     NavbarComponent,
     SolicitudComponent,
     CrearSolicitudComponent,
-    DetallesSolicitudComponent
+    DetallesSolicitudComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

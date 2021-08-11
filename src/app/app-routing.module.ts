@@ -3,11 +3,11 @@ import { CrearSolicitudComponent } from './crear-solicitud/crear-solicitud.compo
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetallesSolicitudComponent } from './detalles-solicitud/detalles-solicitud.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: 'crear-solicitud', component: CrearSolicitudComponent
-    //path: 'crear-solicitud', component: DetallesSolicitudComponent
   },
   {
     path: 'solicitud', component: SolicitudComponent
@@ -17,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: '', redirectTo:'/crear-solicitud', pathMatch: 'full'
-  }
+  },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
