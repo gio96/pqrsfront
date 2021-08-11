@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SolicitudGetModel } from '../models/solicitudModel';
 
 @Component({
@@ -11,11 +12,13 @@ export class SolicitudComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 
-  selectedRow(row: SolicitudGetModel) {
-    console.log('selectedRow', row)
-  }
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
+
+  selectedRow(row: SolicitudGetModel) {
+    this.router.navigate(['/detalles',row.id])
+
+  }
 
   ngOnInit(): void {
   }

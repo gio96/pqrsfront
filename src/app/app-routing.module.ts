@@ -6,11 +6,14 @@ import { DetallesSolicitudComponent } from './detalles-solicitud/detalles-solici
 
 const routes: Routes = [
   {
-    //path: 'crear-solicitud', component: CrearSolicitudComponent
-    path: 'crear-solicitud', component: DetallesSolicitudComponent
+    path: 'crear-solicitud', component: CrearSolicitudComponent
+    //path: 'crear-solicitud', component: DetallesSolicitudComponent
   },
   {
     path: 'solicitud', component: SolicitudComponent
+  },
+  {
+    path: 'detalles/:id', component: DetallesSolicitudComponent
   },
   {
     path: '', redirectTo:'/crear-solicitud', pathMatch: 'full'
