@@ -9,7 +9,7 @@ import { SolicitudGetModel } from '../models/solicitudModel';
 })
 export class SolicitudComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['radicado', 'fecha', 'descripcion', 'estado'];
   dataSource = ELEMENT_DATA;
 
 
@@ -28,9 +28,9 @@ export class SolicitudComponent implements OnInit {
 
 
 const ELEMENT_DATA: SolicitudGetModel[] = [
-  { id: '0dfgdfsd754sdf', fechaSolicitud: '04/08/2021', descripcionSolicitud: 'descripcion', respuestaAdministrativa: 'H' },
-  { id: '0dfgdfsd754sdf', fechaSolicitud: '30/01/2020', descripcionSolicitud: 'descripcion', respuestaAdministrativa: '' },
-  { id: '0dfgdfsd754sdf', fechaSolicitud: '04/08/2019', descripcionSolicitud: 'descripcion', respuestaAdministrativa: 'Li' },
-  { id: '0dfgdfsd754sdf', fechaSolicitud: '25/02/2021', descripcionSolicitud: 'descripcion', respuestaAdministrativa: 'Be' },
-  { id: '0dfgdfsd754sdf', fechaSolicitud: '04/08/2021', descripcionSolicitud: 'descripcion', respuestaAdministrativa: 'B' },
+  { id: '0dfgdfsd754sd1', fechaSolicitud: '04/08/2021', descripcionSolicitud: 'descripcion', respuestaAdministrativa: 'H' },
+  { id: '0dfgdfsd754sd2', fechaSolicitud: '30/01/2020', descripcionSolicitud: 'descripcion', respuestaAdministrativa: '' },
+  { id: '0dfgdfsd754sd3', fechaSolicitud: '04/08/2019', descripcionSolicitud: 'descripcion', respuestaAdministrativa: 'Li' },
+  { id: '0dfgdfsd754sd4', fechaSolicitud: '25/02/2021', descripcionSolicitud: 'descripcion', respuestaAdministrativa: 'Be' },
+  { id: '0dfgdfsd754sd5', fechaSolicitud: '04/08/2021', descripcionSolicitud: 'descripcion', respuestaAdministrativa: 'B' },
 ];

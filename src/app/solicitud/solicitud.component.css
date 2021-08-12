@@ -9,3 +9,11 @@
   padding-left: 5rem;
   padding-right: 5rem;
 }
+
+.check{
+  color: green;
+}
+
+.cancel{
+  color: red;
+}
