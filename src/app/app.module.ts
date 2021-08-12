@@ -27,6 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { DetallesSolicitudComponent } from './detalles-solicitud/detalles-solicitud.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {MatDialogModule } from '@angular/material/dialog';
+import { ReclamoPopupComponent } from './reclamo-popup/reclamo-popup.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SolicitudComponent,
     CrearSolicitudComponent,
     DetallesSolicitudComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ReclamoPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatExpansionModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

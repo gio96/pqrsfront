@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Reclamo</h2>
+<mat-dialog-content>
+    <mat-form-field class="motivoSolicitud">
+      <mat-label>Motivo del Reclamo</mat-label>
+      <textarea matInput [(ngModel)]="descripcionReclamo"></textarea>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="accent" type="submit" (click)="requestReclamo()">Generar</button>
+</mat-dialog-actions>
