@@ -1,4 +1,10 @@
 <div class="content">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-form-field class="alignment" [hideRequiredMarker]="true">
+      <input matInput type="text" [(ngModel)]="valorBusqueda">
+    </mat-form-field>
+    <button class="colorButton" mat-raised-button (click)="buscar()">Search</button>
+  </div>
     <div fxLayout="column" fxLayoutAlign="center none" class="tablePadding">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="radicado">
