@@ -29,6 +29,7 @@ import { DetallesSolicitudComponent } from './detalles-solicitud/detalles-solici
 import { NotFoundComponent } from './not-found/not-found.component';
 import {MatDialogModule } from '@angular/material/dialog';
 import { ReclamoPopupComponent } from './reclamo-popup/reclamo-popup.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ReclamoPopupComponent } from './reclamo-popup/reclamo-popup.component';
     MatSelectModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
