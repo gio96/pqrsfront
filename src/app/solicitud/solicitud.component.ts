@@ -18,7 +18,7 @@ export class SolicitudComponent implements OnInit {
   constructor(private router: Router, private solicitudService: SolicitudService) { }
 
   selectedRow(row: SolicitudGetModel) {
-    this.router.navigate(['/detalles',row.id])
+    this.router.navigate(['/detalles',row.id],{state: row})
   }
 
   buscar(){

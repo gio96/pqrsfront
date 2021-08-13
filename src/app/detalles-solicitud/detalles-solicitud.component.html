@@ -1,45 +1,43 @@
-<div class="content">
+<div class="content" (ngModel)="solicitudModel">
   <div class="paddingCard">
     <mat-card class="paddingInterno">
-      <mat-card-title>Solicitud</mat-card-title>
-      <mat-card-subtitle>05/08/2021</mat-card-subtitle>
+      <mat-card-title >{{solicitudModel.tipoSolicitud}}</mat-card-title>
+      <mat-card-subtitle>{{solicitudModel.fechaSolicitud}}</mat-card-subtitle>
       <mat-card-content>
         <div class="descripcion">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-          quos, repudiandae eligendi harum laudantium exercitationem odio ea
-          itaque cum saepe nihil quaerat in id distinctio sunt omnis vel
-          doloribus quo.
+          {{solicitudModel.descripcionSolicitud}}
         </div>
         <div>
           <h3><b>Respuesta</b></h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-          quos, repudiandae eligendi harum laudantium exercitationem odio ea
-          itaque cum saepe nihil quaerat in id distinctio sunt omnis vel
-          doloribus quo.
+          <div *ngIf="solicitudModel.respuestaAdministrativa != null; else defecto">
+            {{solicitudModel.respuestaAdministrativa}}
+          </div>
+          <ng-template #defecto>
+            {{textoDefecto}}
+          </ng-template>
         </div>
       </mat-card-content>
-      <mat-card-actions fxLayout="column" fxLayoutAlign=" center" class="buttonReclamo">
+      <mat-card-actions fxLayout="column" fxLayoutAlign=" center" class="buttonReclamo" *ngIf="solicitudModel.reclamo == null">
         <button mat-raised-button class="colorButton" (click)="crearReclamo()">Crear Reclamo</button>
       </mat-card-actions>
     </mat-card>
   </div>
-  <div class="paddingCard">
+  <div class="paddingCard" *ngIf="solicitudModel.reclamo != null">
     <mat-card class="paddingInterno">
       <mat-card-title>Reclamo</mat-card-title>
-      <mat-card-subtitle>18/09/2021</mat-card-subtitle>
+      <mat-card-subtitle>{{solicitudModel.reclamo.fechaSolicitud}}</mat-card-subtitle>
       <mat-card-content>
         <div class="descripcion">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-          quos, repudiandae eligendi harum laudantium exercitationem odio ea
-          itaque cum saepe nihil quaerat in id distinctio sunt omnis vel
-          doloribus quo.
+          {{solicitudModel.reclamo.descripcionSolicitud}}
         </div>
         <div>
           <h3><b>Respuesta</b></h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-          quos, repudiandae eligendi harum laudantium exercitationem odio ea
-          itaque cum saepe nihil quaerat in id distinctio sunt omnis vel
-          doloribus quo.
+          <div *ngIf="solicitudModel.reclamo.respuestaAdministrativa!= null; else defecto">
+            {{solicitudModel.reclamo.respuestaAdministrativa}}
+          </div>
+          <ng-template #defecto>
+            {{textoDefecto}}
+          </ng-template>
         </div>
       </mat-card-content>
     </mat-card>

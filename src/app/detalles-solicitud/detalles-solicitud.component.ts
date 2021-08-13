@@ -1,7 +1,9 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CrearSolicitudComponent } from '../crear-solicitud/crear-solicitud.component';
+import { SolicitudGetModel } from '../models/solicitudModel';
 import { ReclamoPopupComponent } from '../reclamo-popup/reclamo-popup.component';
 
 @Component({
@@ -11,15 +13,19 @@ import { ReclamoPopupComponent } from '../reclamo-popup/reclamo-popup.component'
 })
 export class DetallesSolicitudComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private dialog: MatDialog) { }
+  solicitudModel: any = {}
+  textoDefecto = 'Sin respuesta'
+
+
+  constructor(private route: ActivatedRoute, private dialog: MatDialog,private location: Location) { }
 
   ngOnInit(): void {
-    this.getDetailsSolicitud();
+    let solicitud = this.location.getState() as SolicitudGetModel
+    this.getDetailsSolicitud(solicitud);
   }
 
-  getDetailsSolicitud(): void {
-    const id = String(this.route.snapshot.paramMap.get('id'));
-    console.warn("Estoy en detallles con el id" + id)
+  getDetailsSolicitud(solicitud: SolicitudGetModel): void {
+    this.solicitudModel = solicitud
   }
 
   crearReclamo(): void {
