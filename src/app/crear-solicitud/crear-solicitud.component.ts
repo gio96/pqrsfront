@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SolicitudCreateModel } from '../models/solicitudModel';
+import { SolicitudService } from '../shared/solicitud.service';
 
 @Component({
   selector: 'app-crear-solicitud',
@@ -14,22 +15,25 @@ export class CrearSolicitudComponent {
   typeRequest = ['PETICION','QUEJA'];
 
   myHero =  new SolicitudCreateModel('SkyDog',
-                       'PETICION');  
-
-
-  onSubmit(){
-    console.warn(this.form.value)
-  }
+                       'PETICION');
 
 
   form: FormGroup;
   typeRequestControl = new FormControl('',Validators.required);
   requestDescriptionControl = new FormControl('',Validators.required)
 
-  constructor(){
+  constructor(private solicitudService: SolicitudService){
     this.form = new FormGroup({
       typeR: this.typeRequestControl,
       requestDescription: this.requestDescriptionControl
+    })
+  }
+
+  onSubmit(){
+    this.solicitudService.createSolicitud(new SolicitudCreateModel(this.form.value.requestDescription,this.form.value.typeR)).subscribe(() => {
+      window.alert("La solicitud ha sido creada")
+      this.typeRequestControl.setValue('')
+      this.requestDescriptionControl.setValue('')
     })
   }
 

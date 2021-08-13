@@ -1,3 +1,4 @@
+import { SolicitudCreateModel } from './../models/solicitudModel';
 import { environment } from './../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -35,6 +36,14 @@ export class SolicitudService {
 
   getSolicitudById(id: string): Observable<SolicitudGetModel>{
     return this.http.get<SolicitudGetModel>(environment.baseUrl+ '/solicitud/'+ id,this.httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  createSolicitud(solicitud: SolicitudCreateModel){
+    return this.http.post<void>(environment.baseUrl+ '/solicitud',JSON.stringify(solicitud),this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)

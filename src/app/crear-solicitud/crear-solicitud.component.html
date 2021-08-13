@@ -14,7 +14,7 @@
         </mat-form-field>
         <mat-form-field class="motivoSolicitud">
           <mat-label>Motivo de la Solicitud</mat-label>
-          <textarea matInput formControlName="requestDescription"></textarea>
+          <textarea matInput [formControl]="requestDescriptionControl"></textarea>
         </mat-form-field>
       </mat-card-content>
       <div fxLayout="column" fxLayoutAlign=" center">

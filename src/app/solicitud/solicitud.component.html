@@ -28,7 +28,7 @@
                   <div *ngIf="element.respuestaAdministrativa != null">
                     <mat-icon class="check">check_circle_outline</mat-icon>
                   </div>
-                  <div *ngIf="element.respuestaAdministrativa == null">
+                  <div *ngIf="element.respuestaAdministrativa == null && element.id !=null">
                     <mat-icon class="cancel">highlight_off</mat-icon>
                   </div>
                 </td>
