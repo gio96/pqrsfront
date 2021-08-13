@@ -25,12 +25,7 @@ export class SolicitudService {
     return this.http.get<SolicitudGetModel[]>(environment.baseUrl+ '/solicitud',this.httpOptions)
     .pipe(
       retry(1),
-      //catchError(this.handleError)
-      catchError(error => {
-        console.log('Ocurrio un error' + error)
-        //throw new Error('Result has failed')
-        return throwError(error);
-      })
+      catchError(this.handleError)
     )
   }
 
@@ -51,10 +46,11 @@ export class SolicitudService {
   }
 
   handleError(error: any){
+    debugger;
     let errorMessage = '';
     if(error.error instanceof ErrorEvent){
       // client-side error
-      errorMessage = error.error.message;
+      errorMessage = error.message;
     }else {
       // server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;

@@ -14,10 +14,6 @@ export class CrearSolicitudComponent {
 
   typeRequest = ['PETICION','QUEJA'];
 
-  myHero =  new SolicitudCreateModel('SkyDog',
-                       'PETICION');
-
-
   form: FormGroup;
   typeRequestControl = new FormControl('',Validators.required);
   requestDescriptionControl = new FormControl('',Validators.required)
@@ -30,7 +26,8 @@ export class CrearSolicitudComponent {
   }
 
   onSubmit(){
-    this.solicitudService.createSolicitud(new SolicitudCreateModel(this.form.value.requestDescription,this.form.value.typeR)).subscribe(() => {
+    let solicitud = new SolicitudCreateModel(this.form.value.requestDescription,this.form.value.typeR)
+    this.solicitudService.createSolicitud(solicitud).subscribe(() => {
       window.alert("La solicitud ha sido creada")
       this.typeRequestControl.setValue('')
       this.requestDescriptionControl.setValue('')
