@@ -1,6 +1,6 @@
-import { SolicitudGetModel } from './../models/solicitudModel';
-import { ReclamoCreateModel } from './../models/reclamoModel';
-import { ReclamoService } from './../shared/reclamo.service';
+import { SolicitudGetModel } from '../shared/models/solicitudModel';
+import { ReclamoCreateModel } from '../shared/models/reclamoModel';
+import { ReclamoService } from './../shared/servicios/reclamo.service';
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 

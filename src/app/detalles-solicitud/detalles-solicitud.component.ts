@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CrearSolicitudComponent } from '../crear-solicitud/crear-solicitud.component';
-import { SolicitudGetModel } from '../models/solicitudModel';
+import { SolicitudGetModel } from '../shared/models/solicitudModel';
 import { ReclamoPopupComponent } from '../reclamo-popup/reclamo-popup.component';
 
 @Component({

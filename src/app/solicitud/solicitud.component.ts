@@ -1,7 +1,8 @@
-import { SolicitudService } from './../shared/solicitud.service';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SolicitudGetModel } from '../models/solicitudModel';
+import { SolicitudGetModel } from '../shared/models/solicitudModel';
+import { SolicitudService } from '../shared/servicios/solicitud.service';
 
 @Component({
   selector: 'app-solicitud',

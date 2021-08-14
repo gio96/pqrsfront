@@ -1,8 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SolicitudCreateModel } from '../models/solicitudModel';
-import { SolicitudService } from '../shared/solicitud.service';
+import { SolicitudCreateModel } from '../shared/models/solicitudModel';
+import { SolicitudService } from '../shared/servicios/solicitud.service';
 
 @Component({
   selector: 'app-crear-solicitud',

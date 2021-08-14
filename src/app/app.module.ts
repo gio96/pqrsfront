@@ -30,6 +30,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {MatDialogModule } from '@angular/material/dialog';
 import { ReclamoPopupComponent } from './reclamo-popup/reclamo-popup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReclamoComponent } from './reclamo/reclamo.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     CrearSolicitudComponent,
     DetallesSolicitudComponent,
     NotFoundComponent,
-    ReclamoPopupComponent
+    ReclamoPopupComponent,
+    ReclamoComponent
   ],
   imports: [
     BrowserModule,

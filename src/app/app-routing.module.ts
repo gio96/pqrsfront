@@ -1,3 +1,4 @@
+import { ReclamoComponent } from './reclamo/reclamo.component';
 import { SolicitudComponent } from './solicitud/solicitud.component';
 import { CrearSolicitudComponent } from './crear-solicitud/crear-solicitud.component';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: '', redirectTo:'/crear-solicitud', pathMatch: 'full'
+  },
+  {
+    path:'reclamo', component: ReclamoComponent
   },
   { path: '**', component: NotFoundComponent }
 ];

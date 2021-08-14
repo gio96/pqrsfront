@@ -16,6 +16,10 @@ export class NavbarComponent implements OnInit {
       label: 'Solicitudes',
       url: "/solicitud"
     },
+    {
+      label: 'Reclamos',
+      url: "/reclamo"
+    },
   ];
 
   constructor() { }
