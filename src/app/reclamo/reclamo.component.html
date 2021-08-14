@@ -9,17 +9,17 @@
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="radicado">
                 <th mat-header-cell *matHeaderCellDef> Radicado </th>
-                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.reclamo.id}} </td>
             </ng-container>
 
             <ng-container matColumnDef="fecha">
                 <th mat-header-cell *matHeaderCellDef> Fecha Solicitud </th>
-                <td mat-cell *matCellDef="let element"> {{element.fechaSolicitud}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.reclamo.fechaSolicitud}} </td>
             </ng-container>
 
             <ng-container matColumnDef="descripcion">
                 <th mat-header-cell *matHeaderCellDef> Descripcion Solicitud </th>
-                <td mat-cell *matCellDef="let element"> {{element.descripcionSolicitud}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.reclamo.descripcionSolicitud}} </td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectedRow(row)"></tr>

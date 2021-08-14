@@ -1,3 +1,4 @@
+import { ReclamoService } from './../shared/servicios/reclamo.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SolicitudGetModel } from '../shared/models/solicitudModel';
@@ -10,36 +11,37 @@ import { SolicitudService } from '../shared/servicios/solicitud.service';
 })
 export class ReclamoComponent implements OnInit {
 
-  displayedColumns: string[] = ['radicado','fecha', 'descripcion'];
+  displayedColumns: string[] = ['radicado', 'fecha', 'descripcion'];
   dataSource: any = []
   valorBusqueda: string = ''
 
-  constructor(private router: Router, private solicitudService: SolicitudService) { }
+  constructor(private router: Router, private reclamoService:ReclamoService) { }
 
   selectedRow(row: SolicitudGetModel) {
-    this.router.navigate(['/detalles',row.id],{state: row})
+    localStorage.setItem("solicitudDetails", JSON.stringify(row))
+    this.router.navigate(['/detalles', row.id])
   }
 
-  buscar(){
-    if(this.valorBusqueda.trim() !== ''){
-      this.getSolicitudId(this.valorBusqueda)
-    }else {
-      this.getAllSolicitudes();
+  buscar() {
+    if (this.valorBusqueda.trim() !== '') {
+      this.getReclamoId(this.valorBusqueda)
+    } else {
+      this.getAllReclamo();
     }
   }
 
   ngOnInit(): void {
-    this.getAllSolicitudes();
+    this.getAllReclamo();
   }
 
-  getAllSolicitudes() {
-    return this.solicitudService.getAllSolicitud().subscribe((data: {}) => {
+  getAllReclamo() {
+    return this.reclamoService.getAllReclamo().subscribe((data: {}) => {
       this.dataSource = data
     })
   }
 
-  getSolicitudId(id: string) {
-    return this.solicitudService.getSolicitudById(id).subscribe((data: {}) => {
+  getReclamoId(idReclamo: string) {
+    return this.reclamoService.getReclamoById(idReclamo).subscribe((data: {}) => {
       this.dataSource = [data]
     })
   }

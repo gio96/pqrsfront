@@ -20,8 +20,8 @@ export class DetallesSolicitudComponent implements OnInit {
   }
 
   crearReclamo(): void {
-    this.dialog.open(ReclamoPopupComponent,{
-      data: { Idsolicitud: this.solicitudModel.id}
+    this.dialog.open(ReclamoPopupComponent, {
+      data: { Idsolicitud: this.solicitudModel.id }
     })
   }
 
