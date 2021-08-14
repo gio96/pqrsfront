@@ -21,37 +21,13 @@ export class ReclamoService {
 
   createReclamo(idSolicitud: string,reclamo: ReclamoCreateModel){
     return this.http.post<void>(`${environment.baseUrl}/solicitud/${idSolicitud}/reclamo`,JSON.stringify(reclamo),this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
   }
 
   getAllReclamo(): Observable<SolicitudGetModel[]> {
     return this.http.get<SolicitudGetModel[]>(environment.baseUrl+ '/solicitud/reclamo',this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
   }
 
   getReclamoById(idSolicitud: string,idReclamo: string): Observable<SolicitudGetModel>{
     return this.http.get<SolicitudGetModel>(`${environment.baseUrl}/solicitud/${idSolicitud}/reclamo/${idReclamo}`,this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-  }
-
-  handleError(error: any){
-    debugger;
-    let errorMessage = '';
-    if(error.error instanceof ErrorEvent){
-      errorMessage = error.message;
-    }else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
   }
 }

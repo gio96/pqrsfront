@@ -29,8 +29,9 @@ import { DetallesSolicitudComponent } from './detalles-solicitud/detalles-solici
 import { NotFoundComponent } from './not-found/not-found.component';
 import {MatDialogModule } from '@angular/material/dialog';
 import { ReclamoPopupComponent } from './reclamo-popup/reclamo-popup.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReclamoComponent } from './reclamo/reclamo.component';
+import { ErrorRestInterceptor } from './error-rest.interceptor';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,13 @@ import { ReclamoComponent } from './reclamo/reclamo.component';
     MatDialogModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorRestInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
