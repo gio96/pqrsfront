@@ -47,11 +47,9 @@ export class SolicitudService {
   handleError(error: any){
     let errorMessage = '';
     if(error.error instanceof ErrorEvent){
-      // client-side error
       errorMessage = error.message;
     }else {
-      // server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.error.message}`;
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
