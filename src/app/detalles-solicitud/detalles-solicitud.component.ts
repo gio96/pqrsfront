@@ -15,21 +15,21 @@ export class DetallesSolicitudComponent implements OnInit {
 
   solicitudModel: any = {}
   textoDefecto = 'Sin respuesta'
+  solicitud: any = {}
 
 
   constructor(private route: ActivatedRoute, private dialog: MatDialog,private location: Location) { }
 
   ngOnInit(): void {
-    let solicitud = this.location.getState() as SolicitudGetModel
-    this.getDetailsSolicitud(solicitud);
-  }
-
-  getDetailsSolicitud(solicitud: SolicitudGetModel): void {
-    this.solicitudModel = solicitud
+    //TODO cuando refresco la pagina se borra la data (location)
+    this.solicitud = this.location.getState() as SolicitudGetModel
+    this.solicitudModel = this.solicitud
   }
 
   crearReclamo(): void {
-    this.dialog.open(ReclamoPopupComponent)
+    this.dialog.open(ReclamoPopupComponent,{
+      data: { Idsolicitud: this.solicitud.id}
+    })
   }
 
 }

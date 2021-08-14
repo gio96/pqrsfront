@@ -10,7 +10,7 @@ import { SolicitudGetModel } from '../models/solicitudModel';
 })
 export class SolicitudComponent implements OnInit {
 
-  displayedColumns: string[] = ['radicado', 'fecha', 'descripcion', 'estado'];
+  displayedColumns: string[] = ['radicado', 'tipo','fecha', 'descripcion', 'estado'];
   dataSource: any = []
   valorBusqueda: string = ''
 

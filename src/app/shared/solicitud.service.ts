@@ -46,7 +46,6 @@ export class SolicitudService {
   }
 
   handleError(error: any){
-    debugger;
     let errorMessage = '';
     if(error.error instanceof ErrorEvent){
       // client-side error
