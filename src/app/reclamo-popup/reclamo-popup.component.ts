@@ -1,4 +1,3 @@
-import { SolicitudGetModel } from '../shared/models/solicitudModel';
 import { ReclamoCreateModel } from '../shared/models/reclamoModel';
 import { ReclamoService } from './../shared/servicios/reclamo.service';
 import { Component, Inject, OnInit, Optional } from '@angular/core';
@@ -17,8 +16,6 @@ export class ReclamoPopupComponent implements OnInit {
 
   crearReclamo() {
     let reclamo: ReclamoCreateModel = { descripcionSolicitud: this.descripcionReclamo }
-    //TODO recargar pagina para ver el cambio o devolver el valor al componente y llamar el servicio desde alla
-    //TODO capturar el error que se genera en el back
     this.reclamoService.createReclamo(this.data.Idsolicitud, reclamo).subscribe(() => {
       window.alert("El reclamo ha sido creado")
       this.dialogRef.close()

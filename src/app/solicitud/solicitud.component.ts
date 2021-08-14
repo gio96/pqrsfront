@@ -1,6 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { SolicitudGetModel } from '../shared/models/solicitudModel';
 import { SolicitudService } from '../shared/servicios/solicitud.service';
 
@@ -19,7 +18,8 @@ export class SolicitudComponent implements OnInit {
   constructor(private router: Router, private solicitudService: SolicitudService) { }
 
   selectedRow(row: SolicitudGetModel) {
-    this.router.navigate(['/detalles',row.id],{state: row})
+    localStorage.setItem("solicitudDetails",JSON.stringify(row))
+    this.router.navigate(['/detalles',row.id])
   }
 
   buscar(){
