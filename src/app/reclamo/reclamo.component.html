@@ -1,1 +1,29 @@
-<p class="content">reclamo works!</p>
+<div class="content">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-form-field class="alignment" [hideRequiredMarker]="true">
+      <input matInput type="text" [(ngModel)]="valorBusqueda">
+    </mat-form-field>
+    <button class="colorButton" mat-raised-button (click)="buscar()">Search</button>
+  </div>
+    <div fxLayout="column" fxLayoutAlign="center none" class="tablePadding">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="radicado">
+                <th mat-header-cell *matHeaderCellDef> Radicado </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="fecha">
+                <th mat-header-cell *matHeaderCellDef> Fecha Solicitud </th>
+                <td mat-cell *matCellDef="let element"> {{element.fechaSolicitud}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="descripcion">
+                <th mat-header-cell *matHeaderCellDef> Descripcion Solicitud </th>
+                <td mat-cell *matCellDef="let element"> {{element.descripcionSolicitud}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectedRow(row)"></tr>
+        </table>
+    </div>
+</div>
+

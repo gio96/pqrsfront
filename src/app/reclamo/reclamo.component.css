@@ -1,3 +1,14 @@
 .content{
   padding-top: 5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.tablePadding{
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.alignment{
+  padding-right: 0.5rem;
 }
